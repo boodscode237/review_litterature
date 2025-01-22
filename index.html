@@ -77,6 +77,26 @@
             margin-bottom: 0.5rem;
             font-size: 1.1rem;
         }
+
+        .search-filter {
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .search-filter input[type="text"] {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            flex: 1;
+        }
+
+        .search-filter select {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
@@ -86,127 +106,685 @@
     </header>
 
     <div class="container">
+        <div class="search-filter">
+            <input type="text" id="searchInput" placeholder="Search papers...">
+            <select id="yearFilter">
+                <option value="">All Years</option>
+                <!-- Generate year options from 1990 to 2024 -->
+                <script>
+                    for (let year = 1990; year <= 2024; year++) {
+                        document.write(`<option value="${year}">${year}</option>`);
+                    }
+                </script>
+            </select>
+        </div>
+
         <!-- Paper 1 -->
-        <div class="paper-card">
-            <h2>Disambiguating Geographic Names in a Historical Digital Library</h2>
-            <div class="authors">David A. Smith, Gregory Crane</div>
-            <div class="year">2001</div>
-            <a class="link" href="https://doi.org/10.1007/3-540-44796-2_12">Full Paper</a>
-            <div class="results">
-                <h3>Main Results</h3>
-                <p>The study's primary outcome is the development of a system that successfully links toponyms in historical texts to specific geographic locations. The system uses a combination of internal text context and external gazetteer resources to disambiguate place names.</p>
-            </div>
-        </div>
+<div class="paper-card">
+    <h2>Disambiguating Geographic Names in a Historical Digital Library</h2>
+    <div class="authors">David A. Smith, Gregory Crane</div>
+    <div class="year">2001</div>
+    <a class="link" href="https://doi.org/10.1007/3-540-44796-2_12">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Presents a system for linking place names in historical texts to specific
+            geographic coordinates by combining text-internal evidence with gazetteer data.
+            Improves digital library usability and visualization of ancient events.
+        </p>
+    </div>
+</div>
 
-        <!-- Paper 2 -->
-        <div class="paper-card">
-            <h2>Grounding Spatial Named Entities for Information Extraction and Question Answering</h2>
-            <div class="authors">Alex Klementiev, Dan Roth, Kevin Small</div>
-            <div class="year">2004</div>
-            <a class="link" href="https://aclanthology.org/W03-0105.pdf">Full Paper</a>
-            <div class="results">
-                <h3>Main Results</h3>
-                <p>The study demonstrates a method to automatically generate geographic maps from news articles, showing where events happen. By analyzing these maps, people can better understand how locations are related and gain insights into their changing significance.</p>
-            </div>
-        </div>
+<!-- Paper 2 -->
+<div class="paper-card">
+    <h2>Grounding Spatial Named Entities for Information Extraction and Question Answering</h2>
+    <div class="authors">Alex Klementiev, Dan Roth, Kevin Small</div>
+    <div class="year">2004</div>
+    <a class="link" href="https://aclanthology.org/W03-0105.pdf">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Proposes methods to visualize named entities (places) from news articles on maps,
+            improving how geographic references are recognized and helping question-answering
+            systems pinpoint real-world coordinates.
+        </p>
+    </div>
+</div>
 
-        <!-- Paper 3 -->
-        <div class="paper-card">
-            <h2>SpatialML: Annotation Scheme, Corpora, and Tools</h2>
-            <div class="authors">Inderjeet Mani et al.</div>
-            <div class="year">2008</div>
-            <a class="link" href="http://www.lrec-conf.org/proceedings/lrec2008/pdf/106_paper.pdf">Full Paper</a>
-            <div class="results">
-                <h3>Main Results</h3>
-                <p>The study introduces SpatialML, an annotation scheme designed to improve the understanding and interpretation of spatial references in natural language. The system achieved 93% disambiguation accuracy using IGDB gazetteer with 1.4k+ matches.</p>
-            </div>
-        </div>
+<!-- Paper 3 -->
+<div class="paper-card">
+    <h2>SpatialML: Annotation Scheme, Corpora, and Tools</h2>
+    <div class="authors">Inderjeet Mani, Janet Hitzeman, Justin Richer, Dave Harris, Rob Quimby, Ben Wellner</div>
+    <div class="year">2008</div>
+    <a class="link" href="http://www.lrec-conf.org/proceedings/lrec2008/pdf/106_paper.pdf">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Introduces a system for tagging spatial references in text and linking them to
+            geographic coordinates. Demonstrates high precision and recall using place tags
+            and advanced disambiguation methods.
+        </p>
+    </div>
+</div>
 
-        <!-- Paper 4 -->
-        <div class="paper-card">
-            <h2>Location Name Extraction from Targeted Text Streams using Gazetteer-based Statistical Language Models</h2>
-            <div class="authors">Hussein S. Al-Olimat et al.</div>
-            <div class="year">2018</div>
-            <a class="link" href="https://aclanthology.org/C18-1169.pdf">Full Paper</a>
-            <div class="results">
-                <h3>Main Results</h3>
-                <p>The proposed LNEx system outperformed Google NLP/DBpedia by 33-179% in F-score. Handles contractions like "LA" → "Los Angeles" using skip-gram models. Tested on 4,500 flood-related tweets with 89% precision.</p>
-            </div>
-        </div>
+<!-- Paper 4 -->
+<div class="paper-card">
+    <h2>A Linguistically Grounded Annotation Language for Spatial Information</h2>
+    <div class="authors">James Pustejovsky, Jessica Moszkowicz, Marc Verhagen</div>
+    <div class="year">2012</div>
+    <a class="link">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Discusses the ISO-Space specification, capturing static and dynamic spatial
+            relationships—topological, directional, and motion-based—to better encode spatial
+            information in text.
+        </p>
+    </div>
+</div>
 
-        <!-- Paper 5 -->
-        <div class="paper-card">
-            <h2>GeoTxt: A scalable geoparsing system for unstructured text geolocation</h2>
-            <div class="authors">Morteza Karimzadeh, Scott Pezanowski, Alan M. MacEachren, Jan O. Wallgrün</div>
-            <div class="year">2018</div>
-            <a class="link" href="https://doi.org/10.1111/tgis.12510">Full Paper</a>
-            <div class="results">
-                <h3>Main Results</h3>
-                <p>GeoTxt outperforms the GeoNames web service by 20% in toponym resolution accuracy. The use of hierarchical disambiguation and proximity-based methods improves the system's accuracy, achieving 87.49% accuracy with CogComp NER.</p>
-            </div>
-        </div>
+<!-- Paper 5 -->
+<div class="paper-card">
+    <h2>The Stanford CoreNLP Natural Language Processing Toolkit</h2>
+    <div class="authors">Christopher D. Manning</div>
+    <div class="year">2014</div>
+    <a class="link" href="https://aclanthology.org/P14-5010.pdf">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Introduces an integrated pipeline of NLP tasks (tokenization, NER, parsing),
+            achieving high accuracy on benchmark data and influencing modern NLP design
+            through extensibility and modular components.
+        </p>
+    </div>
+</div>
 
-        <!-- Paper 6 -->
-        <div class="paper-card">
-            <h2>TAGGS: Grouping Tweets to Improve Global Geoparsing for Disaster Response</h2>
-            <div class="authors">Jens A. de Bruijn, Hans de Moel, Brenden Jongman, Jurjen Wagemaker, Jeroen C. J. H. Aerts</div>
-            <div class="year">2017</div>
-            <a class="link" href="https://doi.org/10.5194/nhess-2017-203">Full Paper</a>
-            <div class="results">
-                <h3>Main Results</h3>
-                <p>TAGGS improved the accuracy of geoparsing by grouping tweets mentioning the same toponym. It achieved a recall of 0.82 and a precision of 0.91, significantly outperforming individual geoparsing methods.</p>
-            </div>
-        </div>
+<!-- Paper 6 -->
+<div class="paper-card">
+    <h2>SemEval-2015 Task 8: SpaceEval</h2>
+    <div class="authors">James Pustejovsky, Parisa Kordjamshidi, Marie-Francine Moens, Aaron Levine, Seth Dworman, Zachary Yocum</div>
+    <div class="year">2015</div>
+    <a class="link">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Defines a shared task for spatial information extraction, focusing on location
+            references, motion events, and spatial relationships. Highlights the complexities
+            of spatiotemporal grounding and sets benchmarks for computational models.
+        </p>
+    </div>
+</div>
 
-        <!-- Paper 7 -->
-        <div class="paper-card">
-            <h2>NeuroTPR: A Neuro-net ToPonym Recognition Model for Extracting Locations from Social Media Messages</h2>
-            <div class="authors">Jimin Wang, Yingjie Hu, Kenneth Joseph</div>
-            <div class="year">2020</div>
-            <a class="link" href="https://arxiv.org/abs/2004.04549">Full Paper</a>
-            <div class="results">
-                <h3>Main Results</h3>
-                <p>NeuroTPR outperforms existing models in recognizing toponyms from tweets, especially fine-grained locations like street names. It achieved the highest precision, recall, and F-score among all models tested.</p>
-            </div>
-        </div>
+<!-- Paper 7 -->
+<div class="paper-card">
+    <h2>From Text to Geographic Coordinates: The Current State of Geocoding</h2>
+    <div class="authors">Daniel W. Goldberg, John P. Wilson, Craig A. Knoblock</div>
+    <div class="year">2015</div>
+    <a class="link" href="https://johnwilson.usc.edu/wp-content/uploads/2016/05/2007-Goldberg-Knoblock-Wilson-JURISA.pdf">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Provides a broad overview of geocoding methods, challenges, and trends.
+            Emphasizes fuzzy matching, context-based disambiguation, and the need to
+            refine gazetteer data for more accurate geographic resolution.
+        </p>
+    </div>
+</div>
 
-        <!-- Paper 8 -->
-        <div class="paper-card">
-            <h2>GeoNLU: Bridging the Gap Between Natural Language and Spatial Data Infrastructures</h2>
-            <div class="authors">Palanichamy Naveen, Rajagopal Maheswar, Pavel Trojovský</div>
-            <div class="year">2023</div>
-            <a class="link" href="https://doi.org/10.1016/j.aej.2023.01.012">Full Paper</a>
-            <div class="results">
-                <h3>Main Results</h3>
-                <p>GeoNLU successfully enables natural language interaction with geospatial data, making it more accessible for non-technical users. It improves the effectiveness of geospatial queries by eliminating the need for complex technical knowledge.</p>
-            </div>
-        </div>
+<!-- Paper 8 -->
+<div class="paper-card">
+    <h2>Geocoding location expressions in Twitter messages: A preference learning method</h2>
+    <div class="authors">Wei Zhang, Judith Gelernter</div>
+    <div class="year">2014</div>
+    <a class="link">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Outlines a preference learning approach to geocoding ambiguous place names in
+            tweets, showing improved accuracy by integrating tweet metadata and gazetteer
+            lookups.
+        </p>
+    </div>
+</div>
 
-        <!-- Paper 9 -->
-        <div class="paper-card">
-            <h2>Predicting the Geolocation of Tweets Using BERT-Based Models</h2>
-            <div class="authors">Kateryna Lutsai, Christoph H. Lampert</div>
-            <div class="year">2023</div>
-            <a class="link" href="https://doi.org/10.2495/JSIS230101">Full Paper</a>
-            <div class="results">
-                <h3>Main Results</h3>
-                <p>BERT-based models trained on tweet data achieve a median error of fewer than 30 km at the global scale and under 15 km for the US-level datasets. The hybrid approach combining tweet content and metadata enhances accuracy.</p>
-            </div>
-        </div>
+<!-- Paper 9 -->
+<div class="paper-card">
+    <h2>NeuroTPR: A Neuro-net ToPonym Recognition Model for Extracting Locations from Social Media Messages</h2>
+    <div class="authors">Jimin Wang, Yingjie Hu, Kenneth Joseph</div>
+    <div class="year">2020</div>
+    <a class="link">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Introduces a BiLSTM-CRF model with character embeddings for robust recognition
+            of location mentions, achieving strong F1-scores on social media data
+            despite noise and abbreviations.
+        </p>
+    </div>
+</div>
 
-        <!-- Paper 10 -->
-        <div class="paper-card">
-            <h2>An LLM Agent for Automatic Geospatial Data Analysis</h2>
-            <div class="authors">Yuxing Chen, Weijie Wang, Sylvain Lobry, Camille Kurtz</div>
-            <div class="year">2024</div>
-            <a class="link" href="https://arxiv.org/abs/2410.18792">Full Paper</a>
-            <div class="results">
-                <h3>Main Results</h3>
-                <p>GeoAgent outperforms baseline LLMs in geospatial data analysis tasks. The inclusion of RAG significantly improves function call accuracy, especially for tasks involving less-common geospatial libraries.</p>
-            </div>
-        </div>
+<!-- Paper 10 -->
+<div class="paper-card">
+    <h2>Geotagging Text Content with Language Models and Feature Mining</h2>
+    <div class="authors">Giorgos Kordopatis-Zilos, Symeon Papadopoulos, Ioannis (Yiannis) Kompatsiaris</div>
+    <div class="year">2018</div>
+    <a class="link">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Proposes language models combined with feature selection to enhance location
+            estimation in geotagging tasks, outperforming baseline systems in large-scale
+            social media corpora.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 11 -->
+<div class="paper-card">
+    <h2>Georeferencing Wikipedia Pages Using Language Models from Flickr</h2>
+    <div class="authors">Chris De Rouck, Olivier Van Laere, Steven Schockaert, Bart Dhoedt</div>
+    <div class="year">2011</div>
+    <a class="link" href="https://doi.org/10.1145/nnnnnnn.nnnnnnn">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Demonstrates that language models trained on geotagged Flickr tags can effectively
+            georeference Wikipedia pages, significantly outperforming gazetteer-only
+            approaches like Yahoo Placemaker.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 12 -->
+<div class="paper-card">
+    <h2>Mining Location from Social Media: A Systematic Review</h2>
+    <div class="authors">Kristin Stock</div>
+    <div class="year">2018</div>
+    <a class="link">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Surveys 690 papers on extracting and analyzing geospatial data from social media,
+            showing that geotagging approaches often outperform manual methods but still face
+            limitations in coverage and ambiguity resolution.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 13 -->
+<div class="paper-card">
+    <h2>Geoparsing and Geosemantic Analysis of Social Media for Spatio-Temporal Grounding of Rumours during Breaking News</h2>
+    <div class="authors">Stuart E. Middleton, Vadims Krivcovs</div>
+    <div class="year">2016</div>
+    <a class="link">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Proposes a system for real-time rumor detection by extracting locations
+            from social media. Enhances journalists’ ability to verify events by
+            mapping geolocated content and context classification.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 14 -->
+<div class="paper-card">
+    <h2>Location Reference Recognition from Texts: A Survey and Comparison</h2>
+    <div class="authors">Xuke Hu, Zhiyong Zhou, Hao Li, Yingjie Hu, Fuqiang Gu, Jens Kersten, Hongchao Fan, Friedrike Klan</div>
+    <div class="year">2023</div>
+    <a class="link">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Provides a comprehensive review of 27 approaches to location reference
+            recognition, showing deep learning-based models (e.g., Flair NER) outperform
+            rule-based methods, especially for informal texts.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 15 -->
+<div class="paper-card">
+    <h2>Geo-Text Data and Data-Driven Geospatial Semantics</h2>
+    <div class="authors">Yingjie Hu</div>
+    <div class="year">2018</div>
+    <a class="link">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Highlights the potential of geo-text data (geotagged social media, Wikipedia)
+            in extracting nuanced geospatial insights. Recommends integrative
+            approaches combining NLP and spatial analysis.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 16 -->
+<div class="paper-card">
+    <h2>Multi-lingual Geoparsing based on Machine Translation</h2>
+    <div class="authors">Xu Chen, Han Zhang, Judith Gelernter</div>
+    <div class="year">2015</div>
+    <a class="link">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Uses machine translation to adapt English-trained geoparsers to multiple languages.
+            Demonstrates comparable accuracy to manual translations, reducing the cost
+            of building separate models.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 17 -->
+<div class="paper-card">
+    <h2>Geo-semantic-parsing: AI-powered geoparsing by traversing semantic knowledge graphs</h2>
+    <div class="authors">Leonardo Nizzoli, Marco Avvenuti, Maurizio Tesconi, Stefano Cresci</div>
+    <div class="year">2020</div>
+    <a class="link" href="https://doi.org/10.1016/j.dss.2020.113346">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Develops a semantic knowledge-graph traversal method for geoparsing that
+            outperforms baseline gazetteer-based approaches, achieving higher recall
+            and precision in location disambiguation.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 18 -->
+<div class="paper-card">
+    <h2>Named Entity Extraction for Knowledge Graphs: A Literature Overview</h2>
+    <div class="authors">Tareq Al-Moslmi, Marc Gallofré Ocaña, Andreas L. Opdahl, Csaba Veres</div>
+    <div class="year">2020</div>
+    <a class="link">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Summarizes trends in NER, NED, and NEL tasks for knowledge graph construction,
+            noting that integrated end-to-end deep learning models are increasingly
+            surpassing rule-based methods in entity extraction.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 19 -->
+<div class="paper-card">
+    <h2>Deep Learning for Toponym Resolution: Geocoding Based on Pairs of Toponyms</h2>
+    <div class="authors">Jacques Fize, Ludovic Moncla, Bruno Martins</div>
+    <div class="year">2021</div>
+    <a class="link" href="https://doi.org/10.3390/ijgi10120818">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Employs a neural architecture that uses pairs of toponyms for disambiguation,
+            significantly boosting geocoding accuracy by leveraging contextual
+            relationships between place mentions.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 20 -->
+<div class="paper-card">
+    <h2>Social Media for Emergency Rescue: An Analysis of Rescue Requests on Twitter during Hurricane Harvey</h2>
+    <div class="authors">Lei Zou, Danqing Liao, Nina S.N. Lam, Michelle Meyer, Nasir Gharaibeh, Heng Cai, Bing Zhou, Dongying Li</div>
+    <div class="year">2021</div>
+    <a class="link">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Examines rescue-related tweets during Hurricane Harvey and shows that
+            geotagging and user metadata can help identify locations of people in need,
+            aiding real-time emergency responses.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 21 -->
+<div class="paper-card">
+    <h2>TopoBERT: Plug and Play Toponym Recognition Module Harnessing Fine-tuned BERT</h2>
+    <div class="authors">Bing Zhou, Lei Zou, Yingjie Hu, Qiang Yi, Daniel Goldberg</div>
+    <div class="year">2021</div>
+    <a class="link" href="arXiv:2301.13631">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Introduces a BERT-based model for toponym recognition with a CNN1D classifier,
+            showing superior F1-scores over standard NER tools for extracting locations
+            in real-time data.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 22 -->
+<div class="paper-card">
+    <h2>Big Earth Data for Quantitative Measurement of Community Resilience: Current Challenges, Progresses, and Future Directions</h2>
+    <div class="authors">Yi Qiang, Lei Zou, Heng Cai</div>
+    <div class="year">2023</div>
+    <a class="link" href="https://doi.org/10.1080/20964471.2023.2273594">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Reviews big earth data applications for measuring community resilience.
+            Stresses the need for better data integration and advanced ML to capture
+            dynamic spatiotemporal processes, such as disaster response.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 23 -->
+<div class="paper-card">
+    <h2>SPABERT: A Pretrained Language Model from Geographic Data for Geo-Entity Representation</h2>
+    <div class="authors">Zekun Li, Jina Kim, Yao-Yi Chiang, Muhao Chen</div>
+    <div class="year">2022</div>
+    <a class="link">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Extends BERT with spatial coordinate embeddings to improve geo-entity
+            representations. Demonstrates superior performance on geo-entity typing
+            and linking tasks compared to standard language models.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 24 -->
+<div class="paper-card">
+    <h2>Geocoding of Trees from Street Addresses and Street-Level Images</h2>
+    <div class="authors">Daniel Laumera, Nico Lang, Natalie van Doorn, Oisin Mac Aodha, Pietro Perona, Jan Dirk Wegner</div>
+    <div class="year">2020</div>
+    <a class="link">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Uses a deep learning method on street-level images to retroactively geocode
+            old tree inventories lacking precise coordinates, significantly increasing
+            the accuracy and completeness of urban tree maps.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 25 -->
+<div class="paper-card">
+    <h2>Automatic Search of Multiword Place Names on Historical Maps</h2>
+    <div class="authors">Rhett Olson, Jina Kim, Yao-Yi Chiang</div>
+    <div class="year">2024</div>
+    <a class="link">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Introduces a minimum spanning tree (MST) approach to linking single-word
+            place labels into multiword toponyms on scanned historical maps, improving
+            retrieval accuracy for multiword place names.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 26 -->
+<div class="paper-card">
+    <h2>TAGGS: Grouping Tweets to Improve Global Geotagging for Disaster Response</h2>
+    <div class="authors">Jens de Bruijn, Hans de Moel, Brenden Jongman, Jurjen Wagemaker, Jeroen C.J.H. Aerts</div>
+    <div class="year">2017</div>
+    <a class="link" href="https://doi.org/10.5194/nhess-2017-203">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Improves geoparsing by grouping tweets with the same place references,
+            significantly enhancing recall and precision in identifying flood locations
+            during disasters on a global scale.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 27 -->
+<div class="paper-card">
+    <h2>Location Extraction from Social Media: Geoparsing, Location Disambiguation, and Geotagging</h2>
+    <div class="authors">Stuart E. Middleton, Giorgos Kordopatis-Zilos, Symeon Papadopoulos, Yiannis Kompatsiaris</div>
+    <div class="year">2018</div>
+    <a class="link" href="https://doi.org/10.1145/3202662">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Benchmarking various location extraction algorithms on social media data,
+            showing map-based and language model approaches outperform existing tools
+            like Google Geocoder in disambiguation and coverage.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 28 -->
+<div class="paper-card">
+    <h2>Adaptive Geoparsing Method for Toponym Recognition and Resolution in Unstructured Text</h2>
+    <div class="authors">Edwin Aldana-Bobadilla, Alejandro Molina-Villegas, Ivan Lopez-Arevalo, Shanel Reyes-Palacios, Victor Muñiz-Sanchez, Jean Arreola-Trapala</div>
+    <div class="year">2020</div>
+    <a class="link">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Proposes a hybrid machine learning and rule-based approach to toponym
+            recognition and disambiguation, achieving over 90% accuracy on
+            Spanish-language news and social media text.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 29 -->
+<div class="paper-card">
+    <h2>Enriching the Notion of Path in ISOspace</h2>
+    <div class="authors">James Pustejovsky, Kiyong Lee</div>
+    <div class="year">2017</div>
+    <a class="link">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Proposes a reformulation of the MOVELINK structure within ISOspace to
+            simplify motion event representations, aligning better with
+            figure-ground motion semantics.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 30 -->
+<div class="paper-card">
+    <h2>An LLM Agent for Automatic Geospatial Data Analysis</h2>
+    <div class="authors">Yuxing Chen, Weijie Wang, Sylvain Lobry, Camille Kurtz</div>
+    <div class="year">2024</div>
+    <a class="link" href="https://arxiv.org/2410.18792">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Introduces GeoAgent, which integrates large language models with
+            Monte Carlo Tree Search and Retrieval-Augmented Generation for complex
+            geospatial tasks, outperforming baseline LLM coders on spatial data analysis.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 31 -->
+<div class="paper-card">
+    <h2>From Text to Maps: LLM-Driven Extraction and Geotagging of Epidemiological Data</h2>
+    <div class="authors">Karlyn K. Harrod, Prabin Bhandari, Antonios Anastasopoulos</div>
+    <div class="year">2024</div>
+    <a class="link">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Uses large language models to automate extraction and geotagging of
+            epidemiological reports (e.g., Rift Valley Fever), boosting data
+            completeness and recall, though with modest precision.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 32 -->
+<div class="paper-card">
+    <h2>Location Name Extraction from Targeted Text Streams using Gazetteer-based Statistical Language Models</h2>
+    <div class="authors">Hussein S. Al-Olimat, Krishnaprasad Thirunarayan, Valerie L. Shalin, Amit Sheth</div>
+    <div class="year">2018</div>
+    <a class="link" href="https://doi.org/10.1145/3202662">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            LNEx system leverages gazetteer-based statistical models and skip-grams
+            to handle informal location mentions on Twitter, achieving significantly
+            higher recall than standard NER taggers.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 33 -->
+<div class="paper-card">
+    <h2>GeoTxt: A scalable geoparsing system for unstructured text geolocation</h2>
+    <div class="authors">Morteza Karimzadeh, Scott Pezanowski, Alan M. MacEachren, Jan O. Wallgrün</div>
+    <div class="year">2018</div>
+    <a class="link" href="https://doi.org/10.1111/tgis.12510">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Introduces a system that integrates multiple NER tools and Solr-based search,
+            outperforming GeoNames in disambiguation for large-scale Twitter geoparsing,
+            with high accuracy on a manually annotated corpus.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 34 -->
+<div class="paper-card">
+    <h2>Things and Strings: Improving Place Name Disambiguation from Short Texts by Combining Entity Co-Occurrence with Topic Modeling</h2>
+    <div class="authors">Yiting Ju, Benjamin Adams, Krzysztof Janowicz, Yingjie Hu, Bo Yan, Grant McKenzie</div>
+    <div class="year">2016</div>
+    <a class="link">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Combines co-occurrence heuristics with LDA-based topic modeling to
+            disambiguate place names in short texts, outperforming DBpedia Spotlight
+            and improving F1 scores on real-world test sets.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 35 -->
+<div class="paper-card">
+    <h2>Chinese Toponym Recognition with Variant Neural Structures from Social Media Messages Based on BERT Methods</h2>
+    <div class="authors">Kai Ma, YongJian Tan, Zhong Xie, Qinjun Qiu, Siqiong Chen</div>
+    <div class="year">2022</div>
+    <a class="link">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Proposes BERT-BiLSTM-CRF for Chinese place-name extraction from informal
+            social media text, achieving notable performance gains over conventional
+            CRF-based or BiLSTM-based models alone.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 36 -->
+<div class="paper-card">
+    <h2>Predicting the Geolocation of Tweets Using BERT-Based Models</h2>
+    <div class="authors">Kateryna Lutsai, Christoph H. Lampert</div>
+    <div class="year">2023</div>
+    <a class="link">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Uses BERT fine-tuning on tweet data and metadata to predict tweet
+            geolocations, achieving a median error under 30 km globally and
+            improved accuracy over baseline text-only methods.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 37 -->
+<div class="paper-card">
+    <h2>A Deep Transfer Learning Toponym Extraction and Geospatial Clustering Framework for Investigating Scenic Spots as Cognitive Regions</h2>
+    <div class="authors">Chengkun Zhang, Yiran Zhang, Jiajun Zhang, Junwei Yao, Hongjiu Liu, Tao He, Xinyu Zheng, Xingyu Xue, Liang Xu, Jing Yang, Yuanyuan Wang, Liuchang Xu</div>
+    <div class="year">2023</div>
+    <a class="link" href="https://doi.org/10.3390/ijgi12050196">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Introduces a RoBERTa-BiLSTM-CRF model for toponym extraction on Chinese social
+            media and clusters these toponyms using multi-distance spatial analysis,
+            revealing “cognitive regions” that align with tourist perceptions.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 38 -->
+<div class="paper-card">
+    <h2>Assessing Place Type Similarities Based on Functional Signatures Extracted from Social Media Data</h2>
+    <div class="authors">Doori Oh, Xiaobai A. Yao</div>
+    <div class="year">2021</div>
+    <a class="link" href="https://doi.org/10.3390/ijgi10090626">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Uses thematic patterns from social media content to calculate functional
+            signatures of places, improving cross-gazetteer classification alignment
+            and revealing nuanced relationships among place types.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 39 -->
+<div class="paper-card">
+    <h2>Speaking of Location: Communicating about Space with Geospatial Natural Language</h2>
+    <div class="authors">Kristin Stock, Christopher B. Jones, Thora Tenbrink</div>
+    <div class="year">2019</div>
+    <a class="link">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Summarizes insights from the “Speaking of Location” workshop, proposing a
+            Semantic Pyramid framework to integrate linguistic, cognitive, and GIS
+            methods for automating geospatial natural language communication.
+        </p>
+    </div>
+</div>
+
+<!-- Paper 40 -->
+<div class="paper-card">
+    <h2>Spatial Role Labeling: Towards Extraction of Spatial Relations from Natural Language</h2>
+    <div class="authors">Parisa Kordjamshidi, Martijn Van Otterlo, Marie-Francine Moens</div>
+    <div class="year">2011</div>
+    <a class="link" href="https://doi.org/10.1145/2050104.2050105">Full Paper</a>
+    <div class="results">
+        <h3>Main Results</h3>
+        <p>
+            Introduces Spatial Role Labeling (SpRL) framework to identify spatial roles
+            like trajector, landmark, and spatial indicators. Achieves robust
+            extraction of spatial relations across various text domains.
+        </p>
+    </div>
+</div>
+
 
         <!-- Continue adding all papers following this pattern -->
     </div>
+
+    <script>
+        document.getElementById('searchInput').addEventListener('input', filterPapers);
+        document.getElementById('yearFilter').addEventListener('change', filterPapers);
+
+        function filterPapers() {
+            const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+            const selectedYear = document.getElementById('yearFilter').value;
+
+            document.querySelectorAll('.paper-card').forEach(card => {
+                const title = card.querySelector('h2').textContent.toLowerCase();
+                const year = card.getAttribute('data-year');
+
+                const matchesSearch = title.includes(searchQuery);
+                const matchesYear = selectedYear === '' || year === selectedYear;
+
+                if (matchesSearch && matchesYear) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
