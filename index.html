@@ -773,7 +773,7 @@
 
             document.querySelectorAll('.paper-card').forEach(card => {
                 const title = card.querySelector('h2').textContent.toLowerCase();
-                const year = card.getAttribute('data-year');
+                const year = card.getAttribute('year');
 
                 const matchesSearch = title.includes(searchQuery);
                 const matchesYear = selectedYear === '' || year === selectedYear;
